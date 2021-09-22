@@ -1,3 +1,51 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:68729f68b371347d0e42e0f757f8feaecf5dd31233483db392e4554d6c0b6d94
-size 1444
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+  <body>
+    <script>
+        AFRAME.registerComponent('scale-on-mouseenter', {
+          schema: {
+            to: {default: '2.5 2.5 2.5', type: 'vec3'}
+          },
+      
+          init: function () {
+            var data = this.data;
+            var el = this.el;
+            this.el.addEventListener('mouseenter', function () {
+              el.object3D.scale.copy(data.to);
+            });
+          }
+        });
+      </script>
+
+
+    <a-scene>
+
+    <a-assets>
+        <a-asset-item id="masquerade" src=url("https://github.com/racheldepaz/ar-masks/blob/main/assets/masquerademask.glb")></a-asset-item>
+    </a-assets>
+
+    <a-gltf-model src="#masquerade"></a-gltf-model>
+    <a-box
+        color="red"
+        position="0 2 -5"
+        rotation="0 45 45"
+        scale="2 2 2"
+        scale-on-mouse-enter
+      ></a-box>
+      <a-entity
+        src="/assets/mask-2.PNG"
+        id="box"
+        geometry="primitive: box"
+        position="3 2 -5"
+        rotation="0 45 0"
+        scale="2 4 2"
+      ></a-entity>
+
+      <!-- Out of the box environment! -->
+      <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+    </a-scene>
+  </body>
+</html>
