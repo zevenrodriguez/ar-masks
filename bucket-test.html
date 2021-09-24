@@ -1,0 +1,42 @@
+<!DOCTYPE html>>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+  <body>
+    <a-scene>
+
+    <a-assets>
+        <a-asset-item 
+        id="masquerade" 
+        src="https://racheldepaz.github.io/creative-coding/Midterm/snow/snowytree.gltf">
+      </a-asset-item>
+
+      <a-asset-item
+        id="bucket"
+        src="./assets/bucket/scene.gltf">
+      </a-asset-item>
+    </a-assets>
+
+    <!--<a-gltf-model src="#masquerade"></a-gltf-model>
+    <a-gltf-model src="#bucket"></a-gltf-model>-->
+    <a-entity
+        gltf-model = "./assets/bucket/scene.gltf"
+        scale = "10 10 10" 
+        position = "0 2 -5"
+    >
+    </a-entity>
+
+    <a-entity
+      gltf-model = "./assets">
+    </a-entity>
+
+       Out of the box environment!
+    <a-entity 
+      environment="preset: forest; dressingAmount: 500">
+    </a-entity> 
+
+    </a-scene>
+  </body>
+</html>
