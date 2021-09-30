@@ -6,8 +6,27 @@
   <body>
     <a-scene>
       <a-assets>
-        <a-asset-item id="portal" src="image-portal.glb"></a-asset-item>
+        <a-asset-item id="mask1" src="assets\mask1-edited.glb"></a-asset-item>
+        <a-asset-item id="mask1-edited" src="assets\mask1-edited2.glb"></a-asset-item>
+        <a-asset-item id="mask2" src="assets\GLBejaghamdoublefacedmask.glb"></a-asset-item>
+        <a-asset-item id="mask3" src="assets\GLBhelmetmaskkuba.glb"></a-asset-item>
+        <a-asset-item id="mask4" src="assets\GLBigbofacemask2.glb"></a-asset-item>
+        <a-asset-item id="mask5" src="assets\GLBmasquerademask.glb"></a-asset-item>
       </a-assets>
-      <a-entity image-portal="src: #portal"></a-entity>
-    </a-scene>
+      <a-entity position="0 1.2 1" rotation="0 0 0" image-portal="src: #portal"></a-entity>
+
+      <a-gltf-model 
+      src="#mask1"
+      scale = "1 1 1"
+      position = "2 0 4"
+      rotation = "90 -90 0"
+      ></a-gltf-model>
+      <a-gltf-model 
+      src="#mask4"
+      scale = "1 1 1"
+      position = "2 -5 0"
+      rotation = "0 90 0"
+      ></a-gltf-model>
+
+
   </body>
