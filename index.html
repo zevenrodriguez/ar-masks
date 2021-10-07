@@ -15,39 +15,9 @@
 
   <body style="margin: 0px; overflow: hidden;">
 
-    <a-scene>
-      <a-entity position="0 .6 4">
-        <a-camera>
-            <a-entity id="mycursor" cursor="fuse: true; fuseTimeout: 500; max-distance: 10;"
-            position="0 0 -5"
-            scale = "0.1 0.1 0.1"
-            geometry="primitive: ring"
-            material="color: blue; shader: flat">
-            </a-entity>
-        </a-camera>
-    </a-entity>
-
-    <!-- "buttons" -->
-    <a-entity id="bamanacrest-button" geometry="primitive: box" material="color: pink" position="2 2 -5">
-    </a-entity>
-    <a-entity id = "bamana-text" text = "value: Bamanacrest Mask;color:pink" scale = "5 5 5" position = "2 2.5 -5"></a-entity>
-
-    <a-entity id="masquerade-button" geometry="primitive: box" material="color: black" position="2 4 -5">
-    </a-entity>
-    <a-entity id = "masquerade-text" text = "value: Masquerade Mask;color:black" scale = "5 5 5" position = "2 4.5 -5"></a-entity>
-
-
+    <a-scene artoolkit>
+      <a-box></a-box>
+      <a-marker-camera type='pattern' url="assets/patterns/patern0.patt" emitevent=true><a-marker-camera>
     </a-scene>
-    <script>
-      document.querySelector('#bamanacrest-button').addEventListener('click', function() {
-        console.log("bamana click recognized")
-        window.location.href="bamana.html";
-     });
-     document.querySelector('#masquerade-button').addEventListener('click', function() {
-        console.log("masquerade click recognized")
-        window.location.href="masquerade.html";
-     });
-  </script>
-    
   </body>
 </html>
