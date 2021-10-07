@@ -1,23 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
 
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> <!--TODO make this a toggle button-->
-    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
-    <!-- include based on qr codes stuff-->
-  </head>
-  <!-- include A-Frame obviously -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <body style="margin: 0px; overflow: hidden;">
+    <title>Representing Art</title>
+    <meta name="description" content="A web AR viewer for the Representing Art 2020 Grant">
+    <meta name="author" content="Rachel De Oaz">
 
-    <a-scene artoolkit>
-      <a-box></a-box>
-      <a-marker-camera type='pattern' url="assets/patterns/patern0.patt" emitevent=true><a-marker-camera>
-    </a-scene>
-  </body>
+    <meta property="og:title" content="Representing Art">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://racheldepaz.github.io/ar-masks/">
+    <meta property="og:description" content="A web AR viewer for the Representing Art 2020 Grant">
+    <meta property="og:image" content="image.png">
+    <!--TODO-->
+
+    <link rel="icon" href="/favicon.ico">
+    <!--TODO-->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!--TODO-->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!--TODO-->
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <!--TODO-->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.133.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@2.2.2/aframe/build/aframe-ar.min.js"></script>
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+</body>
+
 </html>
