@@ -38,12 +38,9 @@
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
         <a-marker type="barcode" value="0">
-
-            <!-- A yellow box -->
-            <a-gltf-model src="#mask-nocolor" scale="2 2 2" rotation="0 90 0"></a-gltf-model>
-            </a-box>
-
+            <a-entity gltf-model="#mask-nocolor"></a-entity>
         </a-marker>
+
 
         <!-- Define the camera of the scene -->
         <a-entity camera></a-entity>
