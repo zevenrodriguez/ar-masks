@@ -33,14 +33,13 @@
     <!-- MatrixCodeType is 3x3 because we have created a 3x3 marker before using the online tool  -->
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         <a-assets>
-            <a-asset-item id="mask-nocolor" src="assets\mask1-edited.glb"></a-asset-item>
+            <a-asset-item id="mask-nocolor" src="assets\mask5-1.glb"></a-asset-item>
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
         <a-marker type="barcode" value="0">
-            <a-entity gltf-model="#mask-nocolor"></a-entity>
+            <a-gltf-model src="#mask-1" scale="1 1 1" position="0 0 -2" rotation="0 90 0"></a-gltf-model>
+            <a-box position='0 0.5 0' color="red"></a-box>
         </a-marker>
-
-        console.log("3:45 version");
 
         <!-- Define the camera of the scene -->
         <a-entity camera></a-entity>
