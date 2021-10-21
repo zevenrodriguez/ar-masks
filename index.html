@@ -9,6 +9,7 @@
     <!-- Load the required dependencies: A-frame and AR.js -->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="persistOnRecognize.js"></script>
 
     <!-- This is a hack because at the time of writing there are some distortions in the provided visuals until the  -->
     <!-- system receives a resize event. The resize event must be triggered when everything has been loaded and the  -->
@@ -42,23 +43,24 @@
 
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
-        <a-marker type="barcode" value="0">
+        <a-marker type="barcode" value="0" id="mask_0">
             <a-gltf-model src="#mask-5" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-gltf-model>
+            <a-text></a-text>
         </a-marker>
 
-        <a-marker type="barcode" value="1">
+        <a-marker type="barcode" value="1" id="mask_1">
             <a-gltf-model src="#mask-4" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-gltf-model>
         </a-marker>
 
-        <a-marker type="barcode" value="2">
+        <a-marker type="barcode" value="2" id="mask_2">
             <a-gltf-model src="#mask-3" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
         </a-marker>
 
-        <a-marker type="barcode" value="3">
+        <a-marker type="barcode" value="3" id="mask_3">
             <a-gltf-model src="#mask-2" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
         </a-marker>
 
-        <a-marker type="barcode" value="4">
+        <a-marker type="barcode" value="4" id="mask_4">
             <a-gltf-model src="#mask-1" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
         </a-marker>
 
