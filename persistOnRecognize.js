@@ -1,14 +1,15 @@
-var arToolkitSource = new THREEx.ArToolkitSource({
+AFRAME.registerComponent("marker-distance", {
 
-    sourceType: 'webcam',
-})
+    tick: function() {
+        this.markerDistance(marker)
+    },
+    markerDistance: function(marker) {
 
-arToolkitSource.init(function onReady() {
+        var marker = document.querySelector(marker)
 
-    console.log(arToolkitContext.arController);
-    if (arToolkitContext.arController !== null) {
-        arToolkitContext.arController.addEventListener('getMarker', function(ev) {
-            console.log('marker pos: ', ev.data.marker.pos);
-        });
+        markerPos = new THREE.Vector3();
+        marker.object3D.getWorldPosition(markerPos);
+        console.log("marker pos for " + marker + " is " + markerPos);
     }
-})
+
+});
