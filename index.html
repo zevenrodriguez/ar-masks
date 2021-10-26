@@ -40,9 +40,9 @@
             <a-asset-item id="mask-5" src="assets\mask5.glb"></a-asset-item>
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
-        <a-marker type="barcode" value="0" id="mask0">
+        <a-marker-camera type="barcode" value="0" id="mask0">
             <a-gltf-model src="#mask-5" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0" marker-distance="#mask-5"></a-gltf-model>
-        </a-marker>
+        </a-marker-camera>
 
         <a-marker type="barcode" value="1" id="mask1">
             <a-gltf-model src="#mask-4" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-gltf-model>
@@ -61,6 +61,6 @@
         </a-marker>
 
         <!-- Define the camera of the scene -->
-        <a-entity camera></a-entity>
+        <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>
     </a-scene>
 </body>
