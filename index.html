@@ -41,24 +41,6 @@
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
         <a-marker type="barcode" value="0" id="mask0">
-            <script>
-                var m = document.querySelector("a-marker");
-                m.addEventListener("markerFound", (e) => {
-                    console.log("marker 0 found");
-                    this.markerFound();
-                });
-
-                function markerFound() {
-                    var marker = document.querySelector("#mask0")
-                    markerPos = new THREE.Vector3();
-                    marker.object3D.getWorldPosition(markerPos);
-                    console.log("marker pos for " + marker + " is " + markerPos);
-                }
-
-                m.addEventListener("markerLost", (e) => {
-                    console.log("marker 0 lost");
-                });
-            </script>
             <a-gltf-model src="#mask-5" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0" marker-distance="#mask-5"></a-gltf-model>
         </a-marker>
 
