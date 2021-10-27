@@ -1,9 +1,30 @@
-AFRAME.registerComponent('mask0', {
-    schema: {},
-    init: function() {
-        var maskPos = document.querySelector('mask0');
-        var mask0Pos = mask0.getAttribute('position');
+let markerPosition = new THREE.Vector3(0, 1, 0);
 
-        console.log('position = ' + mask0Pos);
+AFRAME.registerComponent('markerhandler', {
+    schema: {
+        id: { type: 'int', default: -1 }
+    },
+    init: function() {
+
+
+    },
+
+    tick: function() {
+        var data = this.data;
+        this.el.sceneEl.addEventListener('markerFound', () => {
+            // redirect to custom URL e.g. google.com
+            console.log("marker " + data.id + " found")
+
+            markerPosition = this.el.object3D.position;
+
+            console.log(markerPosition.x);
+
+            console.log("marker " + data.id + " position = " + JSON.stringify(markerPosition));
+
+
+        })
+        document.getElementById('m0').object3D.position.set(markerPosition.x, markerPosition.y, markerPosition.z); //TODO lerp 
+
     }
+
 });
