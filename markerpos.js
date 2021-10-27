@@ -2,7 +2,8 @@ let markerPosition = new THREE.Vector3(0, 1, 0);
 
 AFRAME.registerComponent('markerhandler', {
     schema: {
-        id: { type: 'int', default: -1 }
+        id: { type: 'int', default: -1 },
+        hasbeenTracked: { default: false }
     },
     init: function() {
 
