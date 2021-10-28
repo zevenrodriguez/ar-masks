@@ -11,7 +11,6 @@
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
 
-
     <script src="markerpos.js"></script>
 
     <!-- This is a hack because at the time of writing there are some distortions in the provided visuals until the  -->
@@ -44,20 +43,20 @@
             <a-asset-item id="mask-5" src=".\assets\mask5.glb"></a-asset-item>
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
-        <a-marker markerHandler="id: 0" type="barcode" value="0" id="mask0"></a-marker>
-        <a-gltf-model id="m0" src="#mask-5" scale="0.01 0.01 0.01" rotation="0 90 0"></a-gltf-model>
+        <a-marker marker0Handler="id: 0" type="barcode" value="0" id="mask0"></a-marker>
+        <a-gltf-model name="0" id="m0" src="#mask-5" scale="0.01 0.01 0.01" rotation="0 90 0"></a-gltf-model>
 
-        <!--     <a-marker type="barcode" value="1" id="mask1"></a-marker>
+        <a-marker marker1Handler="id: 1" type="barcode" value="1" id="mask1"></a-marker>
         <a-gltf-model id="m1" src="#mask-4" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
-        <a-marker type="barcode" value="2" id="mask2"></a-marker>
-        <a-gltf-model id="m2" src="#mask-3" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
+        <!--  <a-marker marker2Handler="id: 2" type="barcode" value="2" id="mask2"></a-marker>
+        <a-gltf-model id="m2" src="#mask-3" scale=".5 .5 .5" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
-        <a-marker type="barcode" value="3" id="mask3"></a-marker>
-        <a-gltf-model id="m3" src="#mask-2" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
+        <a-marker marker3Handler="id: 3" type="barcode" value="3" id="mask3"></a-marker>
+        <a-gltf-model id="m3" src="#mask-2" scale=".5 .5 .5" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
-        <a-marker type="barcode" value="4" id="mask4"></a-marker>
-        <a-gltf-model id="m4" src="#mask-1" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>-->
+        <a-marker marke4Handler="id: 4" type="barcode" value="4" id="mask4"></a-marker>
+        <a-gltf-model id="m4" src="#mask-1" scale=".5 .5 .5" position="0 0 0" rotation="0 90 0"></a-gltf-model>-->
 
         <!-- Define the camera of the scene -->
         <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>

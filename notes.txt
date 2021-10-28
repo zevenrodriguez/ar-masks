@@ -1,3 +1,13 @@
 Resources Used
  - ARJS AFRAME show without marker https://stackoverflow.com/questions/62799625/ar-js-aframe-object-show-also-without-pointing-marker
  - AFRAME GITHUB position.md (only gives "world" pos) https://github.com/aframevr/aframe/blob/master/docs/components/position.mdg
+
+
+TODO
+ clean up code, make all models work (CRITICAL)
+ rotation and manipulation of models (HIGH)
+ lerping to position (NORMAL)
+
+
+NOTES
+Right now, each marker has its own handler. this is because previously, having one marker handler meant that one marker being recognized moved all models to that location.

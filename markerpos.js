@@ -1,31 +1,46 @@
-let markerPosition = new THREE.Vector3(0, 1, 0);
+let markerPosition = [new THREE.Vector3(0, 0, -1), new THREE.Vector3(0, 0, -1), new THREE.Vector3(0, 0, -1), new THREE.Vector3(0, 0, -1)]
 
-AFRAME.registerComponent('markerhandler', {
+AFRAME.registerComponent('marker0handler', {
     schema: {
         id: { type: 'int', default: -1 },
         hasbeenTracked: { default: false }
     },
     init: function() {
-
-
+        this.el.object3D.visible = "false";
+        console.log(this.el.getAttribute('id'));
     },
 
     tick: function() {
         var data = this.data;
         this.el.sceneEl.addEventListener('markerFound', () => {
-            // redirect to custom URL e.g. google.com
-            console.log("marker " + data.id + " found")
-
-            markerPosition = this.el.object3D.position;
-
-            console.log(markerPosition.x);
-
-            console.log("marker " + data.id + " position = " + JSON.stringify(markerPosition));
-
+            this.el.object3D.visible = true; //set object visible when first tracked //TODO on click, hide model
+            markerPosition[data.id] = this.el.object3D.position; //set marker position to world position
 
         })
-        document.getElementById('m0').object3D.position.set(markerPosition.x, markerPosition.y, markerPosition.z); //TODO lerp 
 
+        //glb elements are updated every frame
+        document.getElementById('m' + data.id).object3D.position.set(markerPosition[data.id].x, markerPosition[data.id].y, markerPosition[data.id].z); //TODO lerp 
     }
 
+});
+
+AFRAME.registerComponent('marker1handler', {
+    schema: {
+        id: { type: 'int', default: -1 }
+    },
+
+    init: function() {
+        this.el.object3D.visible = "false";
+    },
+
+    tick: function() {
+        var data = this.data;
+        this.el.sceneEl.addEventListener('markerFound', () => {
+            this.el.object3D.visible = true; //set object visible when first tracked //TODO on click, hide model
+            markerPosition[data.id] = this.el.object3D.position; //set marker position to world position
+        })
+
+        //glb elements are updated every frame
+        document.getElementById('m' + data.id).object3D.position.set(markerPosition[data.id].x, markerPosition[data.id].y, markerPosition[data.id].z); //TODO lerp 
+    }
 });
