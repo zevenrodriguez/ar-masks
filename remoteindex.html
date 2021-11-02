@@ -44,16 +44,16 @@
             <a-asset-item id="mask-5" src="https://racheldepaz.github.io/ar-masks/assets/mask5.glb"></a-asset-item>
         </a-assets>
         <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
-        <a-marker markerHandler="id: 0" type="barcode" value="0" id="mask0"></a-marker>
+        <a-marker marker0Handler="id: 0" type="barcode" value="0" id="mask0"></a-marker>
         <a-gltf-model id="m0" src="#mask-5" scale="0.01 0.01 0.01" rotation="0 90 0"></a-gltf-model>
 
-        <!--     <a-marker type="barcode" value="1" id="mask1"></a-marker>
+        <a-marker marker1Handler="id: 1" type="barcode" value="1" id="mask1"></a-marker>
         <a-gltf-model id="m1" src="#mask-4" scale="0.01 0.01 0.01" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
-        <a-marker type="barcode" value="2" id="mask2"></a-marker>
+        <a-marker marker2Handler="id: 2" type="barcode" value="2" id="mask2"></a-marker>
         <a-gltf-model id="m2" src="#mask-3" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
-        <a-marker type="barcode" value="3" id="mask3"></a-marker>
+        <!-- <a-marker type="barcode" value="3" id="mask3"></a-marker>
         <a-gltf-model id="m3" src="#mask-2" scale="1 1 1" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
         <a-marker type="barcode" value="4" id="mask4"></a-marker>

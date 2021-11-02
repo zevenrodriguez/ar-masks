@@ -2,12 +2,11 @@ let markerPosition = [new THREE.Vector3(0, 0, -1), new THREE.Vector3(0, 0, -1), 
 
 AFRAME.registerComponent('marker0handler', {
     schema: {
-        id: { type: 'int', default: -1 },
-        hasbeenTracked: { default: false }
+        id: { type: 'int', default: -1 }
     },
     init: function() {
-        this.el.object3D.visible = "false";
-        console.log(this.el.getAttribute('id'));
+        this.entity = document.querySelector("#m0");
+        this.entity.setAttribute('visible', 'false');
     },
 
     tick: function() {
@@ -30,7 +29,9 @@ AFRAME.registerComponent('marker1handler', {
     },
 
     init: function() {
-        this.el.object3D.visible = "false";
+        var data = this.data;
+        this.entity = document.querySelector("#m1");
+        this.entity.setAttribute('visible', 'false');
     },
 
     tick: function() {
@@ -51,8 +52,8 @@ AFRAME.registerComponent('marker2handler', {
     },
 
     init: function() {
-        this.el.object3D.visible = "false";
-
+        this.entity = document.querySelector("#m2");
+        this.entity.setAttribute('visible', 'false');
     },
 
     tick: function() {
