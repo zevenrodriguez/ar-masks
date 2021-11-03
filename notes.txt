@@ -4,8 +4,8 @@ Resources Used
 
 
 TODO
- clean up code, make all models work (CRITICAL)
  rotation and manipulation of models (HIGH)
+ preload and compress models before runtime (normal?)
  lerping to position (NORMAL)
 
 
