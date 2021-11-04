@@ -4,10 +4,12 @@ Resources Used
 
 
 TODO
- rotation and manipulation of models (HIGH)
+ UI: title text + button to close the marker (CRITICAL) 
+ Information panel button (HIGH) -- look into aframe gui library 
+ model gets larger on first tracked (HIGH)
+ rotation and manipulation of models (normal)
  preload and compress models before runtime (normal?)
  lerping to position (NORMAL)
-
 
 NOTES
 Right now, each marker has its own handler. this is because previously, having one marker handler meant that one marker being recognized moved all models to that location.

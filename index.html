@@ -6,11 +6,13 @@
     <!-- Initialize the viewport -->
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <!-- Load the required dependencies: A-frame and AR.js -->
+    <!-- Load the required dependencies-->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
 
+    <!--My Script(s)-->
     <script src="markerpos.js"></script>
 
     <!-- This is a hack because at the time of writing there are some distortions in the provided visuals until the  -->
@@ -42,7 +44,15 @@
             <a-asset-item id="mask-4" src=".\assets\mask4.glb"></a-asset-item>
             <a-asset-item id="mask-5" src=".\assets\mask5.glb"></a-asset-item>
         </a-assets>
-        <!-- Defines the barcode marker that we are going to use. We have just to specify its code, that in this case is 2 -->
+
+        <!--Testing-->
+        <a-entity position="0 0 -10">
+            <a-gui-button width="0.5" height="0.5" base-depth="0.025" depth="0.1" gap="0.1" key-code="32" value="Sample Button" font-family="assets/fonts/PermanentMarker-Regular.ttf" font-size="0.25" margin="0 0 0.05 0" font-color="black" active-color="red" hover-color="yellow"
+                border-color="white" focus-color="black" background-color="orange" bevel="true">
+            </a-gui-button>
+        </a-entity>
+
+        <!-- Markers. Gltf models -->
         <a-marker marker0Handler="id: 0" type="barcode" value="0" id="mask0"></a-marker>
         <a-gltf-model name="0" id="m0" src="#mask-5" scale="0.01 0.01 0.01" rotation="0 90 0"></a-gltf-model>
 
@@ -59,7 +69,18 @@
         <a-gltf-model id="m4" src="#mask-1" scale=".5 .5 .5" position="0 0 0" rotation="0 90 0"></a-gltf-model>
 
         <!-- Define the camera of the scene -->
+        <a-entity id="cameraRig" position="0 1.6 0">
+            <a-camera look-controls wasd-controls position="0 0 0">
+                <a-gui-cursor id="cursor" raycaster="objects: [gui-interactable]" fuse="true" fuse-timeout="2000" color="#ECEFF1" hover-color="#CFD8DC" active-color="#607D8B" design="ring">
+                    <!-- dot, ring, reticle, cross  -->
+                </a-gui-cursor>
+                <!-- /cursor -->
+            </a-camera>
+            <!-- /camera -->
+        </a-entity>
+        <!--
         <a-entity camera look-controls orbit-controls="target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 180; initialPosition: 0 5 15"></a-entity>
+-->
     </a-scene>
 
 </body>
